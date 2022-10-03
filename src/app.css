@@ -1,0 +1,64 @@
+@import url('https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+	.fades {
+		pointer-events: none;
+		box-shadow: inset 0 0 4em white;
+	}
+	.dark .fades {
+		pointer-events: none;
+		box-shadow: inset 0 0 4em #191e22;
+	}
+	.shadow-mine {
+		box-shadow: 0 0 1rem rgba(0, 0, 0, 0.2);
+	}
+	main {
+		@apply mx-[15vw] py-[4em] mt-[4em];
+	}
+	.banner,
+	.banner ~ div {
+		@apply overflow-hidden;
+		grid-column: 1 / -1;
+		grid-row: 1 / -1;
+	}
+	.banner {
+		filter: blur(0.125rem) brightness(0.5) contrast(0.75);
+	}
+	.navbar-hls li,
+	.hl {
+		@apply p-[1em] bg-no-repeat bg-left-bottom transition-all 
+			   duration-[0.1s] ease-linear rounded-md;
+		background-image: linear-gradient(135deg, #582841, #f36f38);
+		background-size: 0 0.125em;
+	}
+
+	.navbar-hls li:hover,
+	.hl:hover {
+		@apply bg-no-repeat dark:bg-[#21272d] dark:text-white bg-slate-200;
+		background-size: 100% 0.125em;
+	}
+
+	div:not(.non-styled),
+	body {
+		@apply dark:bg-[#191e22];
+	}
+	:root,
+	div {
+		@apply dark:text-white duration-[0.2s] transition-all ease-linear font-semibold text-base;
+	}
+	.info-table td {
+		@apply border-b-[1px] border-slate-700 p-4;
+	}
+	.badges li img {
+		@apply rounded-full aspect-square w-16;
+	}
+	.badges li {
+		@apply !min-h-[100%] aspect-square;
+	}
+	.badges {
+		@apply isolate;
+	}
+}
