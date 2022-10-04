@@ -5,3 +5,4 @@ just clone repo and then do
 npm install
 npm install -D tailwindcss postcss autoprefixer svelte-preprocess
 ```
+also dont forget to install gecko driver
